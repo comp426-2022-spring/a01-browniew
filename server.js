@@ -10,7 +10,7 @@ fs.readFile('./www/index.html', 'utf8' , (err, data) => {
     return
   }
   console.log(data)
-})
+
 // Require minimist module (make sure you install this one via npm).
 // Use minimist to process one argument `--port=` on the command line after `node server.js`.
 
@@ -46,7 +46,7 @@ const server = http.createServer((request, response)=>{
     response.setHeader('Content-Type', 'text/html')
     const header = response.getHeader('Content-Type')
     console.log(header)
-    fs.readFile()
+    response.end(data)
 })
 
 
@@ -60,5 +60,5 @@ server.listen(port, ()=> {
     console.log("Server listening on port ${port}")
 })
 
-
+})
 // That's it! You're all done!
