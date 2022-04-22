@@ -42,10 +42,8 @@ fs.readFile('./www/index.html', 'utf8' , (err, data) => {
 // 3. end with the data that you are reading in from ./www/index.html.
 
 const server = http.createServer((request, response)=>{
-    console.log(response.status)
+    response.statusCode=200
     response.setHeader('Content-Type', 'text/html')
-    const header = response.getHeader('Content-Type')
-    console.log(header)
     response.end(data)
 })
 
