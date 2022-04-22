@@ -4,12 +4,6 @@ const http = require('http')
 // Require fs module
 const fs = require('fs')
 
-fs.readFile('./www/index.html', 'utf8' , (err, data) => {
-  if (err) {
-    console.error(err)
-    return
-  }
-  console.log(data)
 
 // Require minimist module (make sure you install this one via npm).
 // Use minimist to process one argument `--port=` on the command line after `node server.js`.
@@ -30,6 +24,12 @@ const port = args.port || process.env.PORT || 3000
 // If there is an error, put it on the console error, return, and exit with error code 1. 
 // Do not be nice about exiting.
 
+fs.readFile('./www/index.html', 'utf8' , (err, data) => {
+  if (err) {
+    console.error(err)
+    return
+  }
+  console.log(data)
 
 
 
